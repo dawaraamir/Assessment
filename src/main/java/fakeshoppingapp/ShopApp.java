@@ -12,13 +12,13 @@ public class ShopApp {
 
         Clothing[] managerCart = {shirt, pants, hat};
         for (int d = 0; d < managerCart.length; d++) {
-            // System.out.println(managerCart[d]);
+            System.out.println(managerCart[d]);
         }
 
         Clothing[] employeeCart = {shirt, pants, hat};
-        for (int d = 0; d < employeeCart.length; d++) {
-           // System.out.println(employeeCart[d]);
-        }
+
+
+
 
         ArrayList<Clothing> clothes = new ArrayList<>();
         clothes.add(shirt);
@@ -29,8 +29,11 @@ public class ShopApp {
         HourlyEmployee customer1 = new HourlyEmployee("Frank", 'm', 10);
         customer1.setSize('m');
 
+        Discountable[] discountables = {customer1, manger};
 
-        Clothing clothing1 = new Clothing("wool", 12.99, 's');
+
+
+        Clothing clothing1 = new Clothing("button up", 12.99, 's');
         clothing1.setSize('s');
 
         calcTotal(managerCart);
@@ -42,6 +45,7 @@ public class ShopApp {
         manger.printEmpPriceAfterDisc(shirt);
         manger.printEmpPriceAfterDisc(hat);
         sortAndPrintClothingByPrice(clothes);
+        printDiscAmtOff(discountables, shirt);
     }
 
     public static double calcTotal(Clothing[] manager) {
@@ -76,10 +80,11 @@ public class ShopApp {
         System.out.println("Printing each type of Employee's name: "  + "\n" + employee.getName());
     }
 
-   /* public static void printDiscAmtOff(Discountable[] discountables, Clothing clothing) {
-        discountables.
-    }
+    public static void printDiscAmtOff(Discountable[] discountables, Clothing clothing) {
+        for (Discountable x: discountables) {
+            System.out.println("The discount price for a "+ clothing.getDescription() + " " + x.calcDiscount(clothing));
 
-    */
-}
+        }
+        }
+    }
 

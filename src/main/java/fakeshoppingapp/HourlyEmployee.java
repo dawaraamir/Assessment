@@ -9,14 +9,13 @@ public class HourlyEmployee extends Employee implements Discountable {
     public String toString() {
         return "HourlyEmployee{}";
     }
-
-    @Override
-    public double caclDiscount() {
-        return getDiscount();
+    public double calcDiscount(Clothing clothing) {
+        return clothing.getPrice() * (getDiscount() /100 );
     }
 
     @Override
     public void printEmpPriceAfterDisc(Clothing clothing) {
-        System.out.println("Hourly employee price for " + clothing.getDescription() + " after discount" + "\n" + "$" + clothing.getPrice() * (getDiscount() / 100));
+        double pay = clothing.getPrice() * (getDiscount() /100 );
+        System.out.println("Hourly employee price for " + clothing.getDescription() + " after discount" + "\n" + "$" + pay);
     }
 }

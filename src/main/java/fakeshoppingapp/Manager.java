@@ -6,8 +6,9 @@ public class Manager extends Employee implements Discountable{
         super(name, size , discount);
     }
 
-    public double caclDiscount() {
-        return getDiscount();
+
+    public double calcDiscount(Clothing clothing) {
+        return clothing.getPrice() * (getDiscount() / 100);
     }
 
 
@@ -15,5 +16,4 @@ public class Manager extends Employee implements Discountable{
     public void printEmpPriceAfterDisc(Clothing clothing) {
         System.out.println("Manager price for " + clothing.getDescription() + " after discount" + "\n" + "$"  + clothing.getPrice() * (getDiscount() / 100));
     }
-
 }
