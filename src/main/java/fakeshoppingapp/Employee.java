@@ -1,16 +1,17 @@
 package fakeshoppingapp;
 
 public abstract class Employee extends Customer {
-private final double DISCOUNT = .10;
+private final double discount;
 
-    public Employee(String name, Clothing[] clothingItems, char size) {
-        super(name, clothingItems, size);
+    public Employee(String name, char size, double discount) {
+        super(name, size);
+        this.discount = discount;
     }
 
-    public double getDISCOUNT() {
-        return DISCOUNT;
+    public double getDiscount() {
+        return discount;
     }
 
-   public abstract void printEmpPriceAfterDisc(Clothing clothing);
+    public abstract void printEmpPriceAfterDisc(Clothing clothing);
 
 }

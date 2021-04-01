@@ -2,7 +2,7 @@ package fakeshoppingapp;
 
 public class Clothing {
     private String description;
-    private Double price;
+    private double price;
     private char size;
 
 
@@ -15,6 +15,10 @@ public class Clothing {
 
     public Double getPrice() {
         return price;
+    }
+
+    public void setSize(char size) {
+        this.size = size;
     }
 
     public char getSize() {
